@@ -1,0 +1,252 @@
+:root {
+  --red: #d21034;
+  --white: #ffffff;
+  --black: #111111;
+  --green: #007229;
+  --bg: #f7f7f7;
+  --text: #1e1e1e;
+  --muted: #575757;
+  --card: #ffffff;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: min(1120px, 92vw);
+  margin: 0 auto;
+}
+
+.hero {
+  min-height: 88vh;
+  color: var(--white);
+  background:
+    linear-gradient(110deg, rgba(0, 114, 41, 0.95) 0 25%, transparent 25%),
+    linear-gradient(180deg, rgba(210, 16, 52, 0.92) 0 33%, rgba(255, 255, 255, 0.12) 33% 66%, rgba(17, 17, 17, 0.92) 66% 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 20%, rgba(255, 255, 255, 0.25), transparent 45%);
+  pointer-events: none;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  position: relative;
+  z-index: 2;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 1.2rem;
+}
+
+.flag-triangle {
+  width: 0;
+  height: 0;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-right: 22px solid var(--green);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.hero-content {
+  padding: 5rem 0 4.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin: 0;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 999px;
+}
+
+.hero h1 {
+  max-width: 900px;
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  line-height: 1.4;
+  margin: 1rem 0;
+}
+
+.hero p {
+  max-width: 800px;
+  font-size: 1.1rem;
+  line-height: 1.9;
+}
+
+.cta-row {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.15rem;
+  border-radius: 0.8rem;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.btn-primary {
+  background: var(--white);
+  color: var(--black);
+}
+
+.btn-outline {
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  color: var(--white);
+}
+
+.section {
+  padding: 4.5rem 0;
+}
+
+.section h2 {
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  margin-top: 0;
+}
+
+.section-band {
+  background: linear-gradient(180deg, #fff 0%, #f2f6f2 100%);
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.two-col {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.three-col {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.card {
+  background: var(--card);
+  padding: 1.2rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  border-top: 4px solid var(--green);
+}
+
+.card h3 {
+  margin: 0 0 0.5rem;
+}
+
+.card p {
+  margin: 0;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+.card-dark {
+  background: #131313;
+  color: #fff;
+  border-top-color: var(--red);
+}
+
+.card-dark p {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.timeline {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.timeline-item {
+  background: #fff;
+  border-inline-start: 6px solid var(--red);
+  padding: 1rem 1rem 1rem 1.2rem;
+  border-radius: 0.7rem;
+  box-shadow: var(--shadow);
+}
+
+.sources-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.sources-list a {
+  color: var(--green);
+  font-weight: 700;
+  word-break: break-word;
+}
+
+.footer {
+  background: var(--black);
+  color: #f2f2f2;
+  padding: 1.1rem 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.back-top {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .two-col,
+  .three-col {
+    grid-template-columns: 1fr;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}
